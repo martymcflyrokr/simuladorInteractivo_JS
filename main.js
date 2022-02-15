@@ -50,7 +50,7 @@ for (i = 1; i < 4; i++) {
             cantidadElegidaVegana = parseInt(prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVegana + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' de burgers tipo ' + burgerVegana)
 
-            if (cantidadElegidaVegana < stockInicialVegana) {
+            if (cantidadElegidaVegana <= stockInicialVegana) {
                 stockActualVegana = stockInicialVegana - cantidadElegidaVegana
                 console.log('El stock actual es de ' + stockActualVegana + ' hamburgesas tipo ' + burgerVegana)
                 alert('Compraste ' + cantidadElegidaVegana + ' de hamburgesas tipo ' + burgerVegana)
