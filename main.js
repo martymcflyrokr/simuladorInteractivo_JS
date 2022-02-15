@@ -30,7 +30,7 @@ function compra(caneleg, stockini, tipobur, stockac) {
 
 let cliente = prompt("Ingrese su nombre")
 
-for (i = 0; i < 3; i++) {
+for (i = 1; i < 4; i++) {
 
     let stockActualVegana
     let cantidadElegidaVegana
