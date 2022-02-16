@@ -20,12 +20,19 @@ function seleccionInvalida() {
     console.log('Seleccion de hamburgesa invalido')
 }
 
-function compra(caneleg, stockini, tipobur, stockac) {
-    if (caneleg < stockini) {
-        stockac = parseInt(stockini - caneleg)
-        console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
-        alert('Compraste ' + caneleg + ' de hamburgesas tipo ' + tipobur)
-    }
+function consultaCantidad(caneleg, stockini, usuario, tipobur) {
+    caneleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
+    console.log('El usuario ' + usuario + ' quiere comprar ' + caneleg + ' de burgers tipo ' + tipobur)
+}
+
+function confirmaCompra(stockac, stockini, caneleg, tipobur) {
+    stockac = stockini - caneleg
+    console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
+    alert('Compraste ' + caneleg + ' de hamburgesas tipo ' + tipobur)
+}
+
+function actualizaStock(stockini, caneleg ) {
+    stockini -= caneleg
 }
 
 let cliente = prompt("Ingrese su nombre")
@@ -47,45 +54,42 @@ for (i = 1; i < 4; i++) {
         console.log('El usuario eligió hamburgesa tipo ' + burgerElegida)
 
         if (burgerElegida == "Vegana") {
-            cantidadElegidaVegana = parseInt(prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVegana + ' unidades'))
+            cantidadElegidaVegana = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVegana + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' de burgers tipo ' + burgerVegana)
 
             if (cantidadElegidaVegana <= stockInicialVegana) {
-                stockActualVegana = stockInicialVegana - cantidadElegidaVegana
-                console.log('El stock actual es de ' + stockActualVegana + ' hamburgesas tipo ' + burgerVegana)
-                alert('Compraste ' + cantidadElegidaVegana + ' de hamburgesas tipo ' + burgerVegana)
-
+                confirmaCompra(stockActualVegana, stockInicialVegana,cantidadElegidaVegana, burgerVegana)
+                stockInicialVegana -= cantidadElegidaVegana 
             } else {
                 excedeStock()
             }
-
-            stockInicialVegana = stockActualVegana
+                   
         }
+
         else if (burgerElegida == "Vacuna") {
-            cantidadElegidaVacuna = parseInt(prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVacuna + ' unidades'))
+            cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVacuna + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVacuna + ' de burgers tipo ' + burgerVacuna)
 
             if (cantidadElegidaVacuna <= stockInicialVacuna) {
-                stockActualVacuna = stockInicialVacuna - cantidadElegidaVacuna
-                console.log('El stock actual es de ' + stockActualVacuna + ' hamburgesas tipo ' + burgerVacuna)
-                alert('Compraste ' + cantidadElegidaVacuna + ' de hamburgesas tipo ' + burgerVacuna)
+                confirmaCompra(stockActualVacuna, stockInicialVacuna,cantidadElegidaVacuna, burgerVacuna)
+                stockInicialVacuna -= cantidadElegidaVacuna 
             } else {
                 excedeStock()
             }
-            stockInicialVacuna = parseInt(stockActualVacuna)
+            
         }
+
         else if (burgerElegida == "Pollo") {
-            cantidadElegidaPollo = parseInt(prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialPollo + ' unidades'))
+            cantidadElegidaPollo = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialPollo + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaPollo + ' de burgers tipo ' + burgerPollo)
 
             if (cantidadElegidaPollo <= stockInicialPollo) {
-                stockActualPollo = stockInicialPollo - cantidadElegidaPollo
-                console.log('El stock actual es de ' + stockActualPollo + ' hamburgesas tipo ' + burgerPollo)
-                alert('Compraste ' + cantidadElegidaPollo + ' de hamburgesas tipo ' + burgerPollo)
+                confirmaCompra(stockActualPollo, stockInicialPollo,cantidadElegidaPollo, burgerPollo)
+                stockInicialPollo -= cantidadElegidaPollo
             } else {
                 excedeStock()
             }
-            stockInicialPollo = parseInt(stockActualPollo)
+            
         }
         else {
             console.log('El usuario enloqueció')
