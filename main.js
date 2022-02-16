@@ -88,9 +88,11 @@ for (i = 1; i < 4; i++) {
             }
 
         }
+
         else {
             console.log('El usuario enloqueció')
         }
+        
     } else {
         seleccionInvalida()
     }
