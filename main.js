@@ -40,6 +40,11 @@ function confirmaCompra(stockac, stockini, caneleg, tipobur, precio) {
 }
 
 
+
+
+
+
+
 let cliente = prompt('Ingrese su nombre')
 let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
 
@@ -60,8 +65,9 @@ while (consultaCompra=='Si') {
                 stockInicialVegana -= cantidadElegidaVegana
             } else {
                 excedeStock()
-            }  
+            }      
         }
+    
 
         else if ((burgerElegida == 'Vacuna')&&(stockInicialVacuna>=1)){
             cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVacuna + ' unidades'))
