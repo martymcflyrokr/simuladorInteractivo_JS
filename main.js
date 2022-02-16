@@ -32,9 +32,11 @@ function confirmaCompra(stockac, stockini, caneleg, tipobur, precio) {
     console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
 }
 
-let cliente = prompt('Ingrese su nombre')
 
-for (i = 1; i < 4; i++) {
+let cliente = prompt('Ingrese su nombre')
+let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
+
+while (consultaCompra=='Si') {
 
     let stockActualVegana
     let cantidadElegidaVegana
@@ -49,24 +51,23 @@ for (i = 1; i < 4; i++) {
     if ((burgerElegida == 'Vegana') || (burgerElegida == 'Pollo') || (burgerElegida == 'Vacuna')) {
         console.log('El usuario eligió hamburgesa tipo ' + burgerElegida)
 
-        if (burgerElegida == 'Vegana') {
-            
+        if ((burgerElegida == 'Vegana')&&(stockInicialVegana>=1)){
             cantidadElegidaVegana = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVegana + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' de burgers tipo ' + burgerVegana)
 
-            if (cantidadElegidaVegana <= stockInicialVegana) {
+            if ((cantidadElegidaVegana <= stockInicialVegana)&&(stockInicialVegana>=1)) {
                 confirmaCompra(stockActualVegana, stockInicialVegana, cantidadElegidaVegana, burgerVegana, precioBurgerVegana)
                 stockInicialVegana -= cantidadElegidaVegana
-                totalVegana = cantidadElegidaVegana*precioBurgerVegana
             } else {
                 excedeStock()
-            }
+            }  
         }
-        else if (burgerElegida == 'Vacuna') {
+
+        else if ((burgerElegida == 'Vacuna')&&(stockInicialVacuna>=1)){
             cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVacuna + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVacuna + ' de burgers tipo ' + burgerVacuna)
 
-            if (cantidadElegidaVacuna <= stockInicialVacuna) {
+            if ((burgerElegida == 'Vacuna')&&(stockInicialVacuna>=1)){
                 confirmaCompra(stockActualVacuna, stockInicialVacuna, cantidadElegidaVacuna, burgerVacuna, precioBurgerVacuna)
                 stockInicialVacuna -= cantidadElegidaVacuna
 
@@ -74,26 +75,28 @@ for (i = 1; i < 4; i++) {
                 excedeStock()
             }
         }
-        else if (burgerElegida == 'Pollo') {
+
+        else if ((burgerElegida == 'Pollo')&&(stockInicialPollo>=1)){
             cantidadElegidaPollo = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialPollo + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaPollo + ' de burgers tipo ' + burgerPollo)
 
-            if (cantidadElegidaPollo <= stockInicialPollo) {
+            if ((burgerElegida == 'Pollo')&&(stockInicialPollo>=1)){
                 confirmaCompra(stockActualPollo, stockInicialPollo, cantidadElegidaPollo, burgerPollo, precioBurgerPollo)
                 stockInicialPollo -= cantidadElegidaPollo   
             } else {
                 excedeStock()
             }
         }
+
         else {
-            console.log('El usuario enloqueció')
+            console.log('El usuario quiere comprar un producto sin Stock')
+            alert('No hay mas stock del producto seleccionado. \nSeleccione otro producto.')
         }
 
     } else {
         seleccionInvalida()
     }
 
+    consultaCompra = prompt('Desea continuar comprando? \nSi \nNo')
+
 }
-
-
-
