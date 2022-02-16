@@ -10,12 +10,12 @@ let burgerVacuna = 'Vacuna'
 let stockInicialVacuna = parseInt(8)
 let precioBurgerVacuna = parseInt(800)
 
-    let stockActualVegana
-    let cantidadElegidaVegana
-    let stockActualPollo
-    let cantidadElegidaPollo
-    let stockActualVacuna
-    let cantidadElegidaVacuna
+let stockActualVegana
+let cantidadElegidaVegana
+let stockActualPollo
+let cantidadElegidaPollo
+let stockActualVacuna
+let cantidadElegidaVacuna
 
 function excedeStock() {
     alert('La cantidad seleccionada supera el stock actual. Vuelva a intentarlo')
@@ -39,10 +39,17 @@ function confirmaCompra(stockac, stockini, caneleg, tipobur, precio) {
     console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
 }
 
-
-
-
-
+function actualizaStock(caneleg, stockini, stockact, tipobur, precio) {
+    caneleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
+    console.log('El usuario ' + cliente + ' quiere comprar ' + caneleg + ' de burgers tipo ' + burgerVegana)
+        if ((caneleg <= stockini)&&(stockini>=1)) {
+        confirmaCompra(stockact, stockini, caneleg, tipobur, precio)
+        stockini -= caneleg
+        } else {
+        excedeStock()
+        } 
+    
+}
 
 
 let cliente = prompt('Ingrese su nombre')
@@ -57,6 +64,9 @@ while (consultaCompra=='Si') {
         console.log('El usuario eligió hamburgesa tipo ' + burgerElegida)
 
         if ((burgerElegida == 'Vegana')&&(stockInicialVegana>=1)){
+        
+            actualizaStock(cantidadElegidaVegana, stockInicialVegana, stockActualVegana, burgerVegana, precioBurgerVegana)
+/*
             cantidadElegidaVegana = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVegana + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' de burgers tipo ' + burgerVegana)
 
@@ -66,9 +76,9 @@ while (consultaCompra=='Si') {
             } else {
                 excedeStock()
             }      
+*/
         }
     
-
         else if ((burgerElegida == 'Vacuna')&&(stockInicialVacuna>=1)){
             cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockInicialVacuna + ' unidades'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVacuna + ' de burgers tipo ' + burgerVacuna)
