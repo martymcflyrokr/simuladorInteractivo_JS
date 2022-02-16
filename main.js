@@ -27,9 +27,9 @@ function seleccionInvalida() {
     console.log('Seleccion de hamburgesa invalido')
 }
 
-function consultaCantidad(cantEleg, stockini, usuario, tipoBurger) {
+function consultaCantidad(cantEleg, stockini, tipoBurger) {
     cantEleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
-    console.log('El usuario ' + usuario + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + tipoBurger)
+    console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + tipoBurger)
 }
 
 function confirmaCompra(stockActual, stockini, cantEleg, tipoBurger, precio) {
@@ -50,7 +50,6 @@ function actualizaStock(cantEleg, stockini, stockActualt, tipoBurger, precio) {
         } 
     
 }
-
 
 let cliente = prompt('Ingrese su nombre')
 let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
