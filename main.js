@@ -10,6 +10,13 @@ let burgerVacuna = 'Vacuna'
 let stockInicialVacuna = parseInt(8)
 let precioBurgerVacuna = parseInt(800)
 
+    let stockActualVegana
+    let cantidadElegidaVegana
+    let stockActualPollo
+    let cantidadElegidaPollo
+    let stockActualVacuna
+    let cantidadElegidaVacuna
+
 function excedeStock() {
     alert('La cantidad seleccionada supera el stock actual. Vuelva a intentarlo')
     console.log('La cantidad elegida es mayor al stock actual')
@@ -38,13 +45,6 @@ let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
 
 while (consultaCompra=='Si') {
 
-    let stockActualVegana
-    let cantidadElegidaVegana
-    let stockActualPollo
-    let cantidadElegidaPollo
-    let stockActualVacuna
-    let cantidadElegidaVacuna
-    
     let burgerElegida = (
         prompt('ingrese el tipo de hamburgesa que quiere llevar: \n Vegana \n Pollo \n Vacuna'))
 
