@@ -27,24 +27,24 @@ function seleccionInvalida() {
     console.log('Seleccion de hamburgesa invalido')
 }
 
-function consultaCantidad(caneleg, stockini, usuario, tipobur) {
-    caneleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
-    console.log('El usuario ' + usuario + ' quiere comprar ' + caneleg + ' de burgers tipo ' + tipobur)
+function consultaCantidad(cantEleg, stockini, usuario, tipoBurger) {
+    cantEleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
+    console.log('El usuario ' + usuario + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + tipoBurger)
 }
 
-function confirmaCompra(stockac, stockini, caneleg, tipobur, precio) {
-    stockac = stockini - caneleg
-    alert('Compraste ' + caneleg + ' de hamburgesas tipo ' + tipobur + '\npor un total de ' + caneleg * precio + ' ARS')
-    console.log('El user gastó ' + caneleg * precio + ' ARS ')
-    console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
+function confirmaCompra(stockActual, stockini, cantEleg, tipoBurger, precio) {
+    stockActual = stockini - cantEleg
+    alert('Compraste ' + cantEleg + ' de hamburgesas tipo ' + tipoBurger + '\npor un total de ' + cantEleg * precio + ' ARS')
+    console.log('El user gastó ' + cantEleg * precio + ' ARS ')
+    console.log('El stock actual es de ' + stockActual + ' hamburgesas tipo ' + tipoBurger)
 }
 
-function actualizaStock(caneleg, stockini, stockact, tipobur, precio) {
-    caneleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
-    console.log('El usuario ' + cliente + ' quiere comprar ' + caneleg + ' de burgers tipo ' + burgerVegana)
-        if ((caneleg <= stockini)&&(stockini>=1)) {
-        confirmaCompra(stockact, stockini, caneleg, tipobur, precio)
-        stockini -= caneleg
+function actualizaStock(cantEleg, stockini, stockActualt, tipoBurger, precio) {
+    cantEleg = (prompt('Indique la cantidad que desea comprar.\nContamos con un stock de ' + stockini + ' unidades'))
+    console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + burgerVegana)
+        if ((cantEleg <= stockini)&&(stockini>=1)) {
+        confirmaCompra(stockActualt, stockini, cantEleg, tipoBurger, precio)
+        stockini -= cantEleg
         } else {
         excedeStock()
         } 
