@@ -29,12 +29,8 @@ function confirmaCompra(stockac, stockini, caneleg, tipobur, precio) {
     stockac = stockini - caneleg
     console.log('El stock actual es de ' + stockac + ' hamburgesas tipo ' + tipobur)
     alert('Compraste ' + caneleg + ' de hamburgesas tipo ' + tipobur + '\npor un total de ' + caneleg * precio + ' ARS')
-    console.log('El user gastó un total de ' + caneleg * precio + ' ARS ')
-
-
+    console.log('El user gastó ' + caneleg * precio + ' ARS ')
 }
-
-
 
 let cliente = prompt('Ingrese su nombre')
 
