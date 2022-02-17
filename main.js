@@ -31,10 +31,9 @@ function confirmaCompra(cantEleg, tipoBurger, precioBur) {
     console.log('El user gastó ' + precioBur * cantEleg + ' ARS ')
 }
 
-function consultaCantidad (cantEleg,cliente, tipoBurger) {
+function consultaCantidad(cantEleg, cliente, tipoBurger) {
     cantEleg = (prompt('Indique la cantidad que desea comprar.'))
     console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + tipoBurger)
-    
 }
 
 //Ejecución
@@ -44,7 +43,7 @@ let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
 
 while (consultaCompra == 'Si') {
 
-        burgerElegida = (
+    burgerElegida = (
         prompt('ingrese el tipo de hamburgesa que quiere llevar: \n Vegana \n Pollo \n Vacuna'))
 
     if ((burgerElegida == 'Vegana') || (burgerElegida == 'Pollo') || (burgerElegida == 'Vacuna')) {
@@ -53,7 +52,7 @@ while (consultaCompra == 'Si') {
         if ((burgerElegida == 'Vegana') && (stockInicialVegana >= 1)) {
             cantidadElegidaVegana = (prompt('Indique la cantidad que desea comprar.'))
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' burgers tipo ' + burgerVegana)
-            
+
             if ((cantidadElegidaVegana <= stockInicialVegana) && (stockInicialVegana >= 1)) {
                 confirmaCompra(cantidadElegidaVegana, burgerVegana, precioBurgerVegana)
                 stockInicialVegana -= cantidadElegidaVegana
@@ -62,7 +61,7 @@ while (consultaCompra == 'Si') {
                 excedeStock(stockInicialVegana)
             }
         }
-
+        
         else if ((burgerElegida == 'Vacuna') && (stockInicialVacuna >= 1)) {
 
             cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.'))
