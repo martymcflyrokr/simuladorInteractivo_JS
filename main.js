@@ -31,11 +31,6 @@ function confirmaCompra(cantEleg, tipoBurger, precioBur) {
     console.log('El user gastó ' + precioBur * cantEleg + ' ARS ')
 }
 
-function consultaCantidad(cantEleg, cliente, tipoBurger) {
-    cantEleg = (prompt('Indique la cantidad que desea comprar.'))
-    console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' de burgers tipo ' + tipoBurger)
-}
-
 //Ejecución
 
 let cliente = prompt('Ingrese su nombre')
@@ -61,7 +56,7 @@ while (consultaCompra == 'Si') {
                 excedeStock(stockInicialVegana)
             }
         }
-        
+
         else if ((burgerElegida == 'Vacuna') && (stockInicialVacuna >= 1)) {
 
             cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.'))
