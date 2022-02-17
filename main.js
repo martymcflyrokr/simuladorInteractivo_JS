@@ -34,8 +34,6 @@ function confirmaCompra(cantEleg, tipoBurger, precioBur) {
     console.log('El user gastó ' + precioBur * cantEleg + ' ARS ')
 
 }
-
-
 let cliente = prompt('Ingrese su nombre')
 let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
 
@@ -57,7 +55,7 @@ while (consultaCompra == 'Si') {
             if ((cantidadElegidaVegana <= stockInicialVegana) && (stockInicialVegana >= 1)) {
                 confirmaCompra(cantidadElegidaVegana, burgerVegana, precioBurgerVegana)
                 stockInicialVegana -= cantidadElegidaVegana
-                console.log('el stock actual es de ' + resultado)
+                console.log('el stock actual es de ' + stockInicialVegana)
             } else {
                 excedeStock()
             }
