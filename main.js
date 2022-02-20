@@ -1,15 +1,15 @@
 //Variables Globales
 let burgerVegana = 'Vegana'
-let stockInicialVegana = parseInt(10)
-let precioBurgerVegana = parseInt(450)
+let stockInicialVegana = 10
+let precioBurgerVegana = 450
 
 let burgerPollo = 'Pollo'
-let stockInicialPollo = parseInt(20)
-let precioBurgerPollo = parseInt(350)
+let stockInicialPollo = 20
+let precioBurgerPollo = 350
 
 let burgerVacuna = 'Vacuna'
-let stockInicialVacuna = parseInt(8)
-let precioBurgerVacuna = parseInt(800)
+let stockInicialVacuna = 8
+let precioBurgerVacuna = 800
 
 let cantidadElegidaVegana
 let cantidadElegidaPollo
@@ -31,22 +31,29 @@ function confirmaCompra(cantEleg, tipoBurger, precioBur) {
     console.log('El user gastó ' + precioBur * cantEleg + ' ARS ')
 }
 
+function seleccionCantidad (cantEleg,tipoBurger) {
+    cantEleg = prompt('Indique la cantidad que desea comprar.')
+    console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' burgers tipo ' + tipoBurger)
+        return cantEleg
+}
+
 //Ejecución
 
 let cliente = prompt('Ingrese su nombre')
 let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
 
-while (consultaCompra == 'Si') {
+while (consultaCompra === 'Si') {
 
-    burgerElegida = (
-        prompt('ingrese el tipo de hamburgesa que quiere llevar: \n Vegana \n Pollo \n Vacuna'))
+    burgerElegida = 
+        prompt ('ingrese el tipo de hamburgesa que quiere llevar: \n Vegana \n Pollo \n Vacuna')
 
-    if ((burgerElegida == 'Vegana') || (burgerElegida == 'Pollo') || (burgerElegida == 'Vacuna')) {
+    if ((burgerElegida === 'Vegana') || (burgerElegida === 'Pollo') || (burgerElegida === 'Vacuna')) {
         console.log('El usuario eligió hamburgesa tipo ' + burgerElegida)
 
-        if ((burgerElegida == 'Vegana') && (stockInicialVegana >= 1)) {
-            cantidadElegidaVegana = (prompt('Indique la cantidad que desea comprar.'))
-            console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' burgers tipo ' + burgerVegana)
+        if ((burgerElegida === 'Vegana') && (stockInicialVegana >= 1)) {
+            // cantidadElegidaVegana = prompt('Indique la cantidad que desea comprar.')
+            // console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' burgers tipo ' + burgerVegana)
+            seleccionCantidad(cantidadElegidaVegana, burgerVegana)
 
             if ((cantidadElegidaVegana <= stockInicialVegana) && (stockInicialVegana >= 1)) {
                 confirmaCompra(cantidadElegidaVegana, burgerVegana, precioBurgerVegana)
@@ -57,9 +64,9 @@ while (consultaCompra == 'Si') {
             }
         }
 
-        else if ((burgerElegida == 'Vacuna') && (stockInicialVacuna >= 1)) {
+        else if ((burgerElegida === 'Vacuna') && (stockInicialVacuna >= 1)) {
 
-            cantidadElegidaVacuna = (prompt('Indique la cantidad que desea comprar.'))
+            cantidadElegidaVacuna = prompt('Indique la cantidad que desea comprar.')
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVacuna + ' burgers tipo ' + burgerVacuna)
 
             if ((cantidadElegidaVacuna <= stockInicialVacuna) && (stockInicialVacuna >= 1)) {
@@ -67,13 +74,13 @@ while (consultaCompra == 'Si') {
                 stockInicialVacuna -= cantidadElegidaVacuna
                 console.log('el stock actual es de ' + stockInicialVacuna)
             } else {
-                excedeStock()
+                excedeStock(stockInicialVacuna)
             }
         }
 
-        else if ((burgerElegida == 'Pollo') && (stockInicialPollo >= 1)) {
+        else if ((burgerElegida === 'Pollo') && (stockInicialPollo >= 1)) {
 
-            cantidadElegidaPollo = (prompt('Indique la cantidad que desea comprar.'))
+            cantidadElegidaPollo = prompt('Indique la cantidad que desea comprar.')
             console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaPollo + ' burgers tipo ' + burgerPollo)
 
             if ((cantidadElegidaPollo <= stockInicialPollo) && (stockInicialPollo >= 1)) {
@@ -81,7 +88,7 @@ while (consultaCompra == 'Si') {
                 stockInicialPollo -= cantidadElegidaPollo
                 console.log('el stock actual es de ' + stockInicialPollo)
             } else {
-                excedeStock()
+                excedeStock(stockInicialPollo)
             }
         }
 
@@ -96,3 +103,4 @@ while (consultaCompra == 'Si') {
     consultaCompra = prompt('Desea continuar comprando? \nSi \nNo')
 
 }
+
