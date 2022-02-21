@@ -17,7 +17,7 @@ let precioVentaPollo = 0
 
 let precioVentaCarneTotal = 0
 let precioVentaPolloTotal = 0
-let precioVentaTotal=0
+let precioVentaTotal = 0
 
 
 //Funciones
@@ -27,6 +27,7 @@ function pedirCantidad(stock) {
     console.log('quiere comprar ' + unidadesCompradas)
     return unidadesCompradas
 }
+
 function actualizarstock(stocktipo, cantidad) {
     console.log('usuario compró : ' + cantidad + ' unidades')
     if (stocktipo === 'stockCarne') {
@@ -35,6 +36,7 @@ function actualizarstock(stocktipo, cantidad) {
         stockPollo -= cantidad
     }
 }
+
 function actualizarUnidades(seleccionBurger) {
     if (seleccionBurger === 'Carne') {
         unidVentaCarne += unidadesCompradas
@@ -42,6 +44,7 @@ function actualizarUnidades(seleccionBurger) {
         unidVentaPollo += unidadesCompradas
     }
 }
+
 function sumarPrecio(seleccionBurger) {
     if (seleccionBurger === 'Carne') {
         precioVentaCarne = unidadesCompradas * precioBurgerCarne
@@ -52,15 +55,17 @@ function sumarPrecio(seleccionBurger) {
         precioVentaPolloTotal += precioVentaPollo
     }
 }
+
 function stockInsuficiente(stock) {
     alert('No contamos con la cantidad que indica.\nSolo contamos con ' + stock + ' unidades.')
     console.log('El usuario eligió mas que el stock actual')
 }
+
 function resumenCompraActual(seleccionBurger) {
 
     let pedirResumen = prompt('Desea ver el resumen de su compra?')
     if (pedirResumen === 'si') {
-        
+
         if (seleccionBurger === 'Carne') {
             console.log('Compra actual : \n' +
                 'Burgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal)
@@ -74,7 +79,7 @@ function resumenCompraActual(seleccionBurger) {
 }
 
 function sumarTotales() {
-    precioVentaTotal = precioVentaPolloTotal+precioVentaCarneTotal
+    precioVentaTotal = precioVentaPolloTotal + precioVentaCarneTotal
 
     alert('Resumen compra total : \n - - - - - - - - - \n' +
         '\nCliente - ' + cliente +
@@ -83,13 +88,11 @@ function sumarTotales() {
         '\nPrecio Total: $' + precioVentaTotal)
 
     console.log('Resumen compra total : \n - - - - - - - - - \n' +
-       '\nCliente - ' + cliente +
-       '\nBurgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal +
-       '\nBurgers Pollo - ' + unidVentaPollo + ' unidades: $' + precioVentaPolloTotal +
-       '\nPrecio Total: $' + precioVentaTotal)
-
+        '\nCliente - ' + cliente +
+        '\nBurgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal +
+        '\nBurgers Pollo - ' + unidVentaPollo + ' unidades: $' + precioVentaPolloTotal +
+        '\nPrecio Total: $' + precioVentaTotal)
 }
-    
 
 //EJECUCION
 
