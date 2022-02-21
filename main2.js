@@ -19,6 +19,7 @@ let precioVentaCarneTotal = 0
 let precioVentaPolloTotal = 0
 let precioVentaTotal=0
 
+
 //Funciones
 function pedirCantidad(stock) {
     console.log('El stock actual es ' + stock)
