@@ -1,106 +1,133 @@
 //Variables Globales
-let burgerVegana = 'Vegana'
-let stockInicialVegana = 10
-let precioBurgerVegana = 450
-
 let burgerPollo = 'Pollo'
-let stockInicialPollo = 20
+let stockPollo = 20
 let precioBurgerPollo = 350
 
-let burgerVacuna = 'Vacuna'
-let stockInicialVacuna = 8
-let precioBurgerVacuna = 800
+let burgerCarne = 'Carne'
+let stockCarne = 8
+let precioBurgerCarne = 800
 
-let cantidadElegidaVegana
-let cantidadElegidaPollo
-let cantidadElegidaVacuna
-let burgerElegida
+let unidadesCompradas = 0
+
+let unidVentaCarne = 0
+let unidVentaPollo = 0
+
+let precioVentaCarne = 0
+let precioVentaPollo = 0
+
+let precioVentaCarneTotal = 0
+let precioVentaPolloTotal = 0
+let precioVentaTotal = 0
+
 
 //Funciones
-function excedeStock(stockini) {
-    alert('La cantidad seleccionada supera el stock actual. Vuelva a intentarlo\nContamos con ' + stockini + ' unidades')
+function pedirCantidad(stock) {
+    console.log('El stock actual es ' + stock)
+    unidadesCompradas = parseInt(prompt('Cuantas unidades desea comprar?'))
+    console.log('quiere comprar ' + unidadesCompradas)
+    return unidadesCompradas
 }
 
-function seleccionInvalida() {
-    alert('Seleccionó un tipo de hamburgesa que no tenemos. Vuelva a intentar.')
-    console.log('Seleccion de hamburgesa invalido')
-}
-
-function confirmaCompra(cantEleg, tipoBurger, precioBur) {
-    alert('Compraste ' + cantEleg + ' de hamburgesas tipo ' + tipoBurger + '\npor un total de ' + precioBur * cantEleg + ' ARS')
-    console.log('El user gastó ' + precioBur * cantEleg + ' ARS ')
-}
-
-function seleccionCantidad (cantEleg,tipoBurger) {
-    cantEleg = prompt('Indique la cantidad que desea comprar.')
-    console.log('El usuario ' + cliente + ' quiere comprar ' + cantEleg + ' burgers tipo ' + tipoBurger)
-        return cantEleg
-}
-
-//Ejecución
-
-let cliente = prompt('Ingrese su nombre')
-let consultaCompra = prompt('Quiere realizar una compra?\nSi \nNo')
-
-while (consultaCompra === 'Si') {
-
-    burgerElegida = 
-        prompt ('ingrese el tipo de hamburgesa que quiere llevar: \n Vegana \n Pollo \n Vacuna')
-
-    if ((burgerElegida === 'Vegana') || (burgerElegida === 'Pollo') || (burgerElegida === 'Vacuna')) {
-        console.log('El usuario eligió hamburgesa tipo ' + burgerElegida)
-
-        if ((burgerElegida === 'Vegana') && (stockInicialVegana >= 1)) {
-            // cantidadElegidaVegana = prompt('Indique la cantidad que desea comprar.')
-            // console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVegana + ' burgers tipo ' + burgerVegana)
-            seleccionCantidad(cantidadElegidaVegana, burgerVegana)
-
-            if ((cantidadElegidaVegana <= stockInicialVegana) && (stockInicialVegana >= 1)) {
-                confirmaCompra(cantidadElegidaVegana, burgerVegana, precioBurgerVegana)
-                stockInicialVegana -= cantidadElegidaVegana
-                console.log('el stock actual es de ' + stockInicialVegana)
-            } else {
-                excedeStock(stockInicialVegana)
-            }
-        }
-
-        else if ((burgerElegida === 'Vacuna') && (stockInicialVacuna >= 1)) {
-
-            cantidadElegidaVacuna = prompt('Indique la cantidad que desea comprar.')
-            console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaVacuna + ' burgers tipo ' + burgerVacuna)
-
-            if ((cantidadElegidaVacuna <= stockInicialVacuna) && (stockInicialVacuna >= 1)) {
-                confirmaCompra(cantidadElegidaVacuna, burgerVacuna, precioBurgerVacuna)
-                stockInicialVacuna -= cantidadElegidaVacuna
-                console.log('el stock actual es de ' + stockInicialVacuna)
-            } else {
-                excedeStock(stockInicialVacuna)
-            }
-        }
-
-        else if ((burgerElegida === 'Pollo') && (stockInicialPollo >= 1)) {
-
-            cantidadElegidaPollo = prompt('Indique la cantidad que desea comprar.')
-            console.log('El usuario ' + cliente + ' quiere comprar ' + cantidadElegidaPollo + ' burgers tipo ' + burgerPollo)
-
-            if ((cantidadElegidaPollo <= stockInicialPollo) && (stockInicialPollo >= 1)) {
-                confirmaCompra(cantidadElegidaPollo, burgerPollo, precioBurgerPollo)
-                stockInicialPollo -= cantidadElegidaPollo
-                console.log('el stock actual es de ' + stockInicialPollo)
-            } else {
-                excedeStock(stockInicialPollo)
-            }
-        }
-
-        else {
-            excedeStock()
-        }
-
-    } else {
-        seleccionInvalida()
+function actualizarstock(stocktipo, cantidad) {
+    console.log('usuario compró : ' + cantidad + ' unidades')
+    if (stocktipo === 'stockCarne') {
+        stockCarne -= cantidad
+    } else if (stocktipo === 'stockPollo') {
+        stockPollo -= cantidad
     }
-
-    consultaCompra = prompt('Desea continuar comprando? \nSi \nNo')
-
 }
 
+function actualizarUnidades(seleccionBurger) {
+    if (seleccionBurger === 'Carne') {
+        unidVentaCarne += unidadesCompradas
+    } else if (seleccionBurger === 'Pollo') {
+        unidVentaPollo += unidadesCompradas
+    }
+}
+
+function sumarPrecio(seleccionBurger) {
+    if (seleccionBurger === 'Carne') {
+        precioVentaCarne = unidadesCompradas * precioBurgerCarne
+        precioVentaCarneTotal += precioVentaCarne
+
+    } else if (seleccionBurger === 'Pollo') {
+        precioVentaPollo = unidadesCompradas * precioBurgerPollo
+        precioVentaPolloTotal += precioVentaPollo
+    }
+}
+
+function stockInsuficiente(stock) {
+    alert('No contamos con la cantidad que indica.\nSolo contamos con ' + stock + ' unidades.')
+    console.log('El usuario eligió mas que el stock actual')
+}
+
+function resumenCompraActual(seleccionBurger) {
+
+    let pedirResumen = prompt('Desea ver el resumen de su compra?')
+    if (pedirResumen === 'si') {
+
+        if (seleccionBurger === 'Carne') {
+            console.log('Compra actual : \n' +
+                'Burgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal)
+        } else if (seleccionBurger === 'Pollo') {
+            console.log('Compra actual : \n' +
+                'Burgers Pollo - ' + unidVentaPollo + ' unidades: $' + precioVentaPolloTotal)
+        }
+    } else {
+        console.log('usuario no quiere ver el resumen')
+    }
+}
+
+function sumarTotales() {
+    precioVentaTotal = precioVentaPolloTotal + precioVentaCarneTotal
+
+    alert('Resumen compra total : \n - - - - - - - - - \n' +
+        '\nCliente - ' + cliente +
+        '\nBurgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal +
+        '\nBurgers Pollo - ' + unidVentaPollo + ' unidades: $' + precioVentaPolloTotal +
+        '\nPrecio Total: $' + precioVentaTotal)
+
+    console.log('Resumen compra total : \n - - - - - - - - - \n' +
+        '\nCliente - ' + cliente +
+        '\nBurgers Carne - ' + unidVentaCarne + ' unidades: $' + precioVentaCarneTotal +
+        '\nBurgers Pollo - ' + unidVentaPollo + ' unidades: $' + precioVentaPolloTotal +
+        '\nPrecio Total: $' + precioVentaTotal)
+}
+
+//EJECUCION
+
+let cliente = prompt('Ingrese nombre:')
+let consultaCompra = prompt('Quiere realizar una compra?\nsi \nno')
+
+while (consultaCompra === 'si') {
+    seleccionBurger = prompt('Seleccione el tipo de hamburguesa:\n1- Carne \n2- Pollo')
+    switch (seleccionBurger) {
+        case 'Carne':
+            pedirCantidad(stockCarne)
+            if (unidadesCompradas <= stockCarne) {
+                actualizarstock('stockCarne', unidadesCompradas)
+                actualizarUnidades('Carne')
+                sumarPrecio('Carne')
+                resumenCompraActual('Carne')
+            } else {
+                stockInsuficiente(stockCarne)
+            }
+            break
+
+        case 'Pollo':
+            pedirCantidad(stockPollo)
+            if (unidadesCompradas <= stockPollo) {
+                actualizarstock('stockPollo', unidadesCompradas)
+                actualizarUnidades('Pollo')
+                sumarPrecio('Pollo')
+                resumenCompraActual('Pollo')
+            } else {
+                stockInsuficiente(stockPollo)
+            }
+            break
+
+        default: alert('seleccionó un tipo de hamburgesa invalido')
+    }
+    sumarTotales()
+    consultaCompra = prompt('Desea seguir comprando?')
+}
