@@ -11,7 +11,7 @@ let precioVentaCarneTotal = 0
 let precioVentaPolloTotal = 0
 let precioVentaTotal = 0
 
-
+//clase constructora
 function Producto(nombreValor, stockValor, precioValor) {
     this.nombre = nombreValor;
     this.stock = stockValor;
@@ -21,6 +21,47 @@ function Producto(nombreValor, stockValor, precioValor) {
 const producto1 = new Producto('Carne', '8', 800)
 const producto2 = new Producto('Pollo', '20', 350)
 
+/* CLASE
+
+class Produs  {
+    constructor (elnombre, elstock, elprecio, lacantidad, lasunidvendidas, elpreciototal){
+        this.elnombre = elnombre.toUpperCase();
+        this.elstock = parseInt(elstock)
+        this.elprecio = parseInt(elprecio)
+        this.lacantidad = parseInt(lacantidad)
+        this.lasunidvendidas = parseint(lasunidvendidas)
+        this.elpreciototal = parseint(this.elpreciototal)
+
+    }
+    valorVenta() {
+        this.elprecio * this.lacantidad;
+    }
+    stockActual() {
+        if (this.elstock > this.lacantidad) {
+            this.elstock - this.lacantidad
+            console.log('El stock actual es: ' + this.elstock)
+        }
+        else {
+            console.log ('La cantidad supera al stock. vuelva a comprar.')
+        }
+    }
+    ventaTotalunidades() {
+        this.lasunidvendidas + lacantidad
+        console.log ( 'se Vendieron ' + this.lasunidvendidas)
+    }
+    ventaTotalPesos() {
+        this.elpreciototal = this.ventaTotalunidades() * this.precio
+        console.log ( 'el total es: $ ' + this.elpreciototal )
+    }
+    
+
+}
+
+
+//Arrays
+
+
+*/
 
 //Funciones
 function pedirCantidad(stock) {
