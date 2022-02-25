@@ -32,7 +32,7 @@ class Producto {
     }
 
     valorVenta() {
-        this.elpreciodelaventa = this.elprecio * this.lasunidades;
+        this.elpreciodelaventa = this.elprecio * this.lasunidades
         return this.elpreciodelaventa
     }
 
@@ -86,9 +86,9 @@ const producto3 = new Producto('VEGAN', 15, 450, 0, 0, 0, 0)
 
 
 //ARRAY CON OBJETOS
-const listaProdu = [];
-listaProdu.push(producto1);
-listaProdu.push(producto2);
+const listaProdu = []
+listaProdu.push(producto1)
+listaProdu.push(producto2)
 
 //Ejecución
 let nombreUser = prompt('Ingrese su nombre')
