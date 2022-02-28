@@ -17,7 +17,13 @@ class Producto {
 
     pedirUnidades() {
         this.lasunidades = parseInt(prompt('Ingrese la cantidad que desea comprar \nEl stock actual es de ' + this.elstock))
-        console.log('Usuario eligió ' + this.lasunidades + ' unidades tipo ' + this.elnombre + ': $' + this.valorVenta())
+        if (this.lasunidades <= this.elstock) {
+            console.log('Usuario eligió ' + this.lasunidades + ' unidades tipo ' + this.elnombre + ': $' + this.valorVenta())
+        }
+        else {
+            console.log('Usuario eligio mayor cantidad de la que disponemos. reintentar compra')
+        }
+        
     }
 
     stockActual() {
@@ -32,17 +38,35 @@ class Producto {
     }
 
     valorVenta() {
-        this.elpreciodelaventa = this.elprecio * this.lasunidades
+        if(this.lasunidades <= this.elstock) {
+            this.elpreciodelaventa = this.elprecio * this.lasunidades
+        }
+        else{
+            alert('Está superando la cantidad que disponemos. Ingrese menor cantidad.')
+            this.pedirUnidades()
+        }
+        
         return this.elpreciodelaventa
     }
 
     ventaTotalPesos() {
-        this.elpreciodelaventatotal += this.elpreciodelaventa
+        if(this.lasunidades <= this.elstock) {
+            this.elpreciodelaventatotal += this.elpreciodelaventa 
+        }
+        else {
+            console.log('no se suma el precio elegido por que supera el stock.')
+        }
     }
 
 
     ventaTotalunidades() {
-        this.lasunidadestotales += this.lasunidades
+        if(this.lasunidades <= this.elstock) {
+            this.lasunidadestotales += this.lasunidades
+        }
+        else {
+            console.log ('no se suma el valo total por que supera el stock.')
+        }
+        
     }
 
     elStockEsInsuficiente() {
@@ -54,7 +78,13 @@ class Producto {
     }
 
     mostrarCompraTotal() {
-        console.log('---------- \nCompra: \nBurgers ' + this.elnombre + ' - ' + this.lasunidadestotales + ' unidades - $' + this.elpreciodelaventatotal + '\n-------------')
+        if(this.lasunidades <= this.elstock) {
+            console.log('---------- \nCompra: \nBurgers ' + this.elnombre + ' - ' + this.lasunidadestotales + ' unidades - $' + this.elpreciodelaventatotal + '\n-------------')
+        }
+        else{
+            console.log('Usuario eligió mas de lo que podia comprar.')
+        }
+        
     }
 }
 
@@ -89,12 +119,14 @@ const producto3 = new Producto('VEGAN', 15, 450, 0, 0, 0, 0)
 const listaProdu = []
 listaProdu.push(producto1)
 listaProdu.push(producto2)
+listaProdu.push(producto3)
 
 //Ejecución
 let nombreUser = prompt('Ingrese su nombre')
 let quiereComprar = prompt('Hola ' + nombreUser.toUpperCase() + '\n¿Quiere realizar una compra?\nSi \nNo ')
 
 while (quiereComprar.toUpperCase() === 'SI') {
+    
     seleccionBur = prompt('Seleccione el tipo de hamburguesa por numero:\n1- Carne \n2- Pollo \n3- Vegan')
     switch (seleccionBur) {
         case "1":
