@@ -126,7 +126,7 @@ let nombreUser = prompt('Ingrese su nombre')
 let quiereComprar = prompt('Hola ' + nombreUser.toUpperCase() + '\n¿Quiere realizar una compra?\nSi \nNo ')
 
 while (quiereComprar.toUpperCase() === 'SI') {
-    seleccionBur = prompt('Seleccione el tipo de hamburguesa por numero:\n1- Carne \n2- Pollo \n3- Vegan')
+    seleccionBur = prompt('Ingrese el tipo de hamburguesa que quiere comprar: ')
     let buscarBurga = listaProdu.find(losprodu => losprodu.elnombre == seleccionBur.toUpperCase())
     console.log('producto que busca el usuario: ' + buscarBurga.elnombre)
 
