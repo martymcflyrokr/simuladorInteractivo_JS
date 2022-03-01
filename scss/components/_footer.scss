@@ -1,0 +1,30 @@
+@import '../base/tipografia';
+@import '../base/extends';
+
+.elFooter {
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    object-fit: cover;
+    .listadosFooter{
+        text-align: center;
+        ul{
+            li{
+                span{
+                    font-size: 1rem;
+                    font-style: oblique;
+                }
+            }
+        
+        }
+    }
+    .row {
+        .col {
+            h2{
+                font-size: 0.75rem;
+                
+                
+            }
+        }
+    }
+}

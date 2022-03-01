@@ -1,0 +1,48 @@
+@import '../base/mapas';
+@import '../base/extends';
+
+.sectionPromos {
+    padding-top: 180px;
+    padding-bottom: 300px;
+    height: auto;
+    object-position: right;
+    background-image: url(/Images/bgtest2.png);
+    @extend %fuenteTitulos;
+    background-repeat:no-repeat;
+    background-size: cover;
+    object-fit:cover;
+    
+    .contenedorPromos {
+        .conTitlePromos {
+
+            color: whitesmoke;
+            text-shadow: 0px 0px 15px gray;
+            padding-bottom: 20px;
+            font-style: italic;
+            
+
+
+            h2 {
+                font-size: 4rem;
+                font-style: italic;
+                @media only screen and(max-width: 400px) {
+                    font-size: 3.5rem;
+                }
+
+            }
+        }
+        .imgPromos {
+            img {
+                width: 100%;
+                border-radius: 10%;
+                -webkit-filter: drop-shadow(0px 1px 0px #222);
+                filter: drop-shadow(0px 10px 20px #222);
+                &:hover {
+                    @include escalar(scale(1.02));
+                    transition: 200ms;
+                    opacity: 75%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: cursive;
+  font-family: 'Oswald', sans-serif; }
+
+li {
+  list-style: none;
+  text-decoration: none; }
+
+html {
+  font-size: 62,5%; }
+
+.sectionBurgers, .burgerExtendido, .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers, .sectionPromos {
+  font-family: 'Oswald', sans-serif; }
+
+html {
+  scroll-behavior: smooth; }
+
+header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px; }
+  header .navbar a:hover {
+    transform: scale(1.03);
+    transition-duration: 1s; }
+  header .navbar .navbar-nav .nav-item a:hover {
+    transform: scale(1.2); }
+  header .navbar-brand a:hover {
+    transform: scale(1.2); }
+
+.sectionBanner {
+  height: auto; }
+  .sectionBanner .row .rowBanner {
+    height: 55rem;
+    background-image: url(/Images/Asset1.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    object-fit: cover;
+    object-position: right; }
+    .sectionBanner .row .rowBanner .containerText {
+      position: relative;
+      padding-top: 20%;
+      text-shadow: 2px 2px 4px black; }
+      .sectionBanner .row .rowBanner .containerText h1 {
+        display: inline-block;
+        color: white;
+        font-style: italic;
+        font-size: 5rem;
+        font-family: 'Oswald', sans-serif;
+        background-image: linear-gradient(to right, #151616, transparent); }
+
+.sectionBurgers, .burgerExtendido, .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers, .sectionPromos {
+  font-family: 'Oswald', sans-serif; }
+
+.sectionBurgers {
+  display: flex;
+  width: 100%;
+  padding-top: 9%;
+  padding-bottom: 12%;
+  object-position: right;
+  background-image: url(/Images/bgtest2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover; }
+  .sectionBurgers .containerBurgers .card:hover {
+    transform: scale(1.02);
+    transition: 200ms;
+    opacity: 75%; }
+  .sectionBurgers .containerBurgers .conTitleBurg {
+    color: whitesmoke;
+    text-shadow: 0px 0px 15px gray;
+    padding-bottom: 20px;
+    font-style: italic; }
+    .sectionBurgers .containerBurgers .conTitleBurg h2 {
+      font-size: 4rem; }
+  .sectionBurgers .containerBurgers .botonCatalogoBurger {
+    display: flex;
+    padding-top: 30px;
+    justify-content: center; }
+
+.sectionBurgers, .burgerExtendido, .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers, .sectionPromos {
+  font-family: 'Oswald', sans-serif; }
+
+.burgerExtendido {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  height: auto;
+  background-image: url(/Images/bgtest2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover; }
+  .burgerExtendido .contenedorburgerExtendido .conTitleBurg {
+    color: whitesmoke;
+    text-shadow: 0px 2px 50px black;
+    padding-bottom: 2rem;
+    font-style: italic; }
+    .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers {
+      font-size: 4rem;
+      color: whitesmoke; }
+  .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido {
+    width: 100%; }
+    .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido .containerburgas {
+      position: relative; }
+      .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido .containerburgas:hover .overlay {
+        opacity: 1; }
+      .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido .containerburgas img {
+        width: 100%;
+        height: 100%; }
+      .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido .containerburgas .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #ebab15; }
+        .burgerExtendido .contenedorburgerExtendido .imgburgerExtendido .containerburgas .overlay .texto {
+          color: white;
+          font-size: 1.4rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center; }
+  .burgerExtendido .contenedorburgerExtendido .botonVolverHome {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: center; }
+
+.drinks {
+  padding-top: 15%;
+  padding-bottom: 20%;
+  object-fit: cover;
+  object-position: right; }
+  .drinks .containerDrinks {
+    height: auto; }
+    .drinks .containerDrinks .conTitleBebidas {
+      color: whitesmoke;
+      text-shadow: 0px 0px 15px gray;
+      padding-bottom: 40px;
+      font-family: 'Oswald', sans-serif; }
+      .drinks .containerDrinks .conTitleBebidas h2 {
+        font-size: 4rem;
+        font-style: italic; }
+    .drinks .containerDrinks .rowDrinks .columnasDrinks {
+      width: 300px;
+      height: 300px;
+      object-fit: cover; }
+      .drinks .containerDrinks .rowDrinks .columnasDrinks img {
+        border-radius: 50%; }
+        .drinks .containerDrinks .rowDrinks .columnasDrinks img:hover {
+          transform: scale(1.08);
+          transition: 200ms;
+          opacity: 75%; }
+
+.sectionBurgers, .burgerExtendido, .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers, .sectionPromos {
+  font-family: 'Oswald', sans-serif; }
+
+.sectionPromos {
+  padding-top: 180px;
+  padding-bottom: 300px;
+  height: auto;
+  object-position: right;
+  background-image: url(/Images/bgtest2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover; }
+  .sectionPromos .contenedorPromos .conTitlePromos {
+    color: whitesmoke;
+    text-shadow: 0px 0px 15px gray;
+    padding-bottom: 20px;
+    font-style: italic; }
+    .sectionPromos .contenedorPromos .conTitlePromos h2 {
+      font-size: 4rem;
+      font-style: italic; }
+      @media only screen and (max-width: 400px) {
+        .sectionPromos .contenedorPromos .conTitlePromos h2 {
+          font-size: 3.5rem; } }
+  .sectionPromos .contenedorPromos .imgPromos img {
+    width: 100%;
+    border-radius: 10%;
+    -webkit-filter: drop-shadow(0px 1px 0px #222);
+    filter: drop-shadow(0px 10px 20px #222); }
+    .sectionPromos .contenedorPromos .imgPromos img:hover {
+      transform: scale(1.02);
+      transition: 200ms;
+      opacity: 75%; }
+
+.contenedorWhatsapp {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+  .contenedorWhatsapp a img {
+    width: 6rem;
+    -webkit-filter: drop-shadow(0px 0px 0px #222);
+    filter: drop-shadow(0px 0px 4px #7a7a7a); }
+
+.sectionBurgers, .burgerExtendido, .burgerExtendido .contenedorburgerExtendido .conTitleBurg .h1CatalogoBurgers, .sectionPromos {
+  font-family: 'Oswald', sans-serif; }
+
+.elFooter {
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  object-fit: cover; }
+  .elFooter .listadosFooter {
+    text-align: center; }
+    .elFooter .listadosFooter ul li span {
+      font-size: 1rem;
+      font-style: oblique; }
+  .elFooter .row .col h2 {
+    font-size: 0.75rem; }
